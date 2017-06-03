@@ -1,0 +1,14 @@
+<h1>Billboards</h1>
+
+<%= link_to 'Create a billboard!', new_billboard_path %>
+
+<% if @billboards.empty? %>
+  <h3 class="text-center"> There is nothiing on your list! Please enter a billboard!</h3>
+  <%else%>
+
+  <% @billboards.each do |billboard| %>
+  <%= link_to billboard.title, billboard_path(billboard) %>
+
+
+  <% end %>
+<% end %>
